@@ -12,8 +12,12 @@ export default new Vuex.Store({
                 health: 100,
                 playerName: 'Mark',
                 attacks: {
-                    slap: 1,
-                    kick: 5
+                    slap: -1,
+                    kick: -5
+                },
+                items: {
+                    vr: 15,
+                    ar: 1
                 }
             },
             {
@@ -21,8 +25,12 @@ export default new Vuex.Store({
                 health: 100,
                 playerName: 'D$',
                 attacks: {
-                    punch: -5,
-                    haduken: -1000
+                    punch: 5,
+                    haduken: 1000
+                },
+                items: {
+                    canadianVacation: 1000000,
+                    hunting: 500
                 }
             },
             {
@@ -30,7 +38,10 @@ export default new Vuex.Store({
                 health: 100,
                 playerName: 'Jakob',
                 attacks: {
-                    tickle: -100
+                    fixingBugs: -25
+                },
+                items: {
+                    energyDrink: 50
                 }
             },
             {
@@ -38,7 +49,10 @@ export default new Vuex.Store({
                 health: 10,
                 playerName: 'J-Dawg',
                 attacks: {
-                    flu: 10000
+                    flu: -10000
+                },
+                items: {
+                    pills: 25
                 }
             }
         ]
@@ -47,7 +61,7 @@ export default new Vuex.Store({
         // FUNCTIONS THAT CAN CHANGE THE STATE
         slap(state, payload) {
             // DATA MUTATION
-            payload.player.health -= payload.player.attacks[payload.attack]
+            payload.player.health += payload.player.attacks[payload.attack]
         }
     },
     actions: {
