@@ -63,9 +63,9 @@ export default new Vuex.Store({
             // DATA MUTATION
             payload.player.health += payload.player.attacks[payload.attack]
         },
-        ability(state, payload){
-            payload.player.health += payload.player.items[payload.items]
-            
+        ability(state, payload) {
+            payload.player.health += payload.player.items[payload.item]
+
         }
     },
     actions: {
@@ -75,6 +75,16 @@ export default new Vuex.Store({
             if (payload.player.health > 0) {
                 // ALLOW THE SLAP
                 commit('slap', payload)
+            } else {
+                // YOU MONSTER
+                console.log('nope')
+            }
+        },
+        ability({ commit, dispatch }, payload) {
+            // BUSINESS LOGIC
+            if (payload.player.health > 0) {
+                // ALLOW THE SLAP
+                commit('ability', payload)
             } else {
                 // YOU MONSTER
                 console.log('nope')

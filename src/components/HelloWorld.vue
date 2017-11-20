@@ -9,7 +9,7 @@
       <h4 v-else>DEAD</h4>
 
       <button v-for="(val, attack) in player.attacks" :disabled="player.health < 1" @click="slap(player, attack)">{{attack}}</button>
-      <button v-for="(val, items) in player.items" @click="slap(player, items)">{{items}}</button>
+      <button v-for="(val, items) in player.items" @click="ability(player, items)">{{items}}</button>
 
     </div>
   </div>
