@@ -62,6 +62,10 @@ export default new Vuex.Store({
         slap(state, payload) {
             // DATA MUTATION
             payload.player.health += payload.player.attacks[payload.attack]
+        },
+        ability(state, payload){
+            payload.player.health += payload.player.items[payload.items]
+            
         }
     },
     actions: {
